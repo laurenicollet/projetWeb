@@ -42,9 +42,16 @@ public class App {
 	    ScriptEngine engine = factory.getScriptEngine();
 	    try {
 	    	engine.eval("library(jsonlite)");
-			engine.eval("df <- data.frame(x=1:10, y=(1:10)+rnorm(n=10))");
-		    engine.eval("print(df)");
-		    engine.eval("print(lm(y ~ x, df))");
+			
+//	    	engine.eval("df <- data.frame(x=1:10, y=(1:10)+rnorm(n=10))");
+//		    engine.eval("print(df)");
+//		    engine.eval("print(lm(y ~ x, df))");
+	    	
+	    	engine.put("toto", d.v1.datasets);
+	    	// some R magic to print all objects and their class with a for-loop:
+	    	engine.eval("print(typeof('toto'))");
+
+		    
 		} catch (ScriptException e) {
 			e.printStackTrace();
 		}
