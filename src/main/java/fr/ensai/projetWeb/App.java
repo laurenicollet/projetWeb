@@ -12,7 +12,7 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		
 		//Getting the datasets available for the choosen cities and theme
-		Data d = new Data(new City("paris"), new City("toulouse"), new Theme("naissance"));
+		Data d = new Data(new City("rennes"), new City("toulouse"), new Theme("election"));
 		d.getData();
 		
 		//Choice by the user of the datasets he wants to use in each city
